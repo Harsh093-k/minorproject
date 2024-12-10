@@ -68,9 +68,7 @@ const sessionOptions = {
 
 
 // Routes
-app.get("/", (req, res) => {
-    res.send("Hi, I am the home page.");
-});
+
 
 
 app.use(session(sessionOptions));
