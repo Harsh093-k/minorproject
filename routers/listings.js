@@ -12,7 +12,7 @@ const {storage} = require("../cloudinary.js")
 const upload = multer({ storage });
 
 // index Route
-router.get("/listings",ListingController.index);
+router.get("/",ListingController.index);
 
 router.get("/beach",ListingController.beach);
 
