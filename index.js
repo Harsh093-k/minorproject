@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-const expressError = require("./utils/ExpressError.js");
+const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
@@ -109,7 +109,7 @@ app.use("/",userRouter)
 
 // Error handling
 app.all("*", (req, res, next) => {
-    next(new expressError(404, "Page not found"));
+    next(new ExpressError(404, "Page not found"));
 });
 
 app.use((err, req, res, next) => {
