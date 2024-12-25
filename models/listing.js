@@ -23,6 +23,17 @@ const listingSchema=new Schema({
     type:Schema.Types.ObjectId,
     ref:"User"
     }],
+    geometry: {
+        typr:{
+            type:String,
+            enum:['Point'],
+            required:true
+        },
+        coordinates:{
+            type: [Number],
+            required :true
+        }
+    },
     category:{
         type:String,
         enum:["Mountain","forest","farming","Beach","lake","rain","ship","sun"],
