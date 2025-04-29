@@ -101,9 +101,9 @@ app.get("/demouser",async(req, res) => {
     res.send(registeruser);
 })
 
-app.use("/listings", listingRouter);
-app.use("/listings/:id/reviews", reviewRouter);
-app.use("/",userRouter)
+app.use("/", listingRouter);
+app.use("/:id/reviews", reviewRouter);
+app.use("/user",userRouter)
 
 // Error handling
 app.all("*", (req, res, next) => {
