@@ -39,9 +39,9 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link " href="/listings/create">Add new Listings</a>
                 <% if(!curruser) { %>
-                <a class="nav-link " href="/signup"><b>Sign in</b></a>
+                <a class="nav-link " href="/user/signup"><b>Sign in</b></a>
 
-                <a class="nav-link" href="/login"><b>Log in</b></a>
+                <a class="nav-link" href="/user/login"><b>Log in</b></a>
                 <% } %>
                 <% if(curruser) { %>
                 <a class="nav-link" href="/loggedout"><b>Log out</b></a>
