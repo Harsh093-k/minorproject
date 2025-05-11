@@ -12,7 +12,7 @@ const {storage} = require("../cloudinary.js")
 const upload = multer({ storage });
 
 // index Route
-router.get("/",ListingController.index);
+router.get("",ListingController.index);
 
 router.get("/beach",ListingController.beach);
 
@@ -29,19 +29,19 @@ router.get("/sun",ListingController.sun);
 router.get("/ship",ListingController.ship);
 
 //  create & new Route
-router.get("/create",isloggedIn,ListingController.renderCreateform);
+router.get("create",isloggedIn,ListingController.renderCreateform);
 
 
 // show Route
-router.get("/:id",ListingController.renderShow);
+router.get(":id",ListingController.renderShow);
 
 // router.post("/" ,validateListing ,wrapAsync(ListingController.Createfunction));
 router.post('/',isloggedIn,upload.single('listing[image]'),wrapAsync(ListingController.Createfunction))
 
 //  Edit Route
-router.get("/:id/edit",isloggedIn,isOwner,ListingController.renderEditform);
+router.get(":id/edit",isloggedIn,isOwner,ListingController.renderEditform);
  router.put("/:id",isloggedIn,isOwner,upload.single('listing[image]'),ListingController.editfunction);
 
 //  Delete Route
-router.delete("/:id",isloggedIn,wrapAsync(ListingController.destroy));
+router.delete(":id",isloggedIn,wrapAsync(ListingController.destroy));
 module.exports=router;
